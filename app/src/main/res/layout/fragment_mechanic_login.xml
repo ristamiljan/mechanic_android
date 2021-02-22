@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mechanic_login_view"/>
+
+    <EditText
+        android:id="@+id/mechanic_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_name"/>
+
+    <EditText
+        android:id="@+id/mechanic_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/hint_password"/>
+
+    <Button
+        android:id="@+id/btn_mechanic_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mechanic Login"
+        android:textColor="@color/colorAccent"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>
