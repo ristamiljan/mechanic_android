@@ -41,6 +41,8 @@ public class UserAccount implements Serializable{
         this.password=password;
     }
 
+    public int getUserId(){ return user_id;}
+
     public String getFirstName() {
         return firstName;
     }

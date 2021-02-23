@@ -1,5 +1,6 @@
 package com.example.mechanic.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import com.example.mechanic.R;
@@ -43,9 +45,21 @@ public class ChooseMechanic extends AppCompatActivity{
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent();
+        intent.putExtra("user_id",loggedUser.getUserId());
+        intent.setClass(getApplicationContext(),DisplayAppointmentsActivity.class);
+        setResult(3, intent);
+        finish();
+
+        return true;
+    }
+
     public void chooseMechanic(View view) {
 
         choosenMechanicId = adapter.getSelectedMechanicId();
+
         Mechanic mechanic = adapter.getMechanicAtPosition(choosenMechanicId);
 
         Toast.makeText(this, "You successfully chosed the mechanic " + mechanic.getFirstName() + " " +
@@ -57,7 +71,6 @@ public class ChooseMechanic extends AppCompatActivity{
         intent.setClass(getApplicationContext(),DisplayAppointmentsActivity.class);
         setResult(2, intent);
 
-        Log.i("Sent request " + selectedMechanic,"2");
         finish();
     }
 }

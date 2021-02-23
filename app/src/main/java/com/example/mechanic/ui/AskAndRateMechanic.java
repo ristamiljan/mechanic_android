@@ -1,8 +1,12 @@
 package com.example.mechanic.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -88,6 +92,17 @@ public class AskAndRateMechanic extends AppCompatActivity implements AdapterView
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent();
+        intent.putExtra("user_id",loggedUser);
+        intent.setClass(getApplicationContext(),DisplayAppointmentsActivity.class);
+        setResult(3, intent);
+        finish();
+
+        return true;
     }
 
     @Override

@@ -67,7 +67,6 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
-
         viewModel.getUsersAndMechanicsWithQuestions(loggedUserId).observe(this, data ->
                 adapter.setData(data.get(0))
         );
@@ -111,7 +110,7 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
         intent.setClass(getApplicationContext(), ChooseMechanic.class);
         intent.putExtra(LOGGED_USER,user);
         startActivityForResult(intent,2);
-        Log.i("Sent request","2");
+        Log.i("from_d_to_c","2");
 
     }
 
@@ -127,6 +126,9 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
                 TextView text = findViewById(R.id.textView);
                 text.setText("You selected mechanic.");
             }
+        } else if(resultCode == 3){
+            Log.i("udjee","mhmhmh");
+            this.loggedUserId = data.getIntExtra("user_id",-1);
         }
     }
 
