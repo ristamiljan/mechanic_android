@@ -100,8 +100,6 @@ public class QuestionsForMechanicListAdapter extends RecyclerView.Adapter<Questi
             super(view);
             questionItemView = view.findViewById(R.id.question_textView);
             questionItemView.setOnClickListener(v-> {
-                Log.i("clicked adapter at: ",Integer.toString(getAdapterPosition()));
-
                 intent = new Intent("question-for-answer");
 
                 intent.putExtra("question", mQuestions.get(getAdapterPosition()));

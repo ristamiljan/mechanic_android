@@ -72,7 +72,6 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
         );
 
         binding.setUser(user);
-
         binding.setLifecycleOwner(this);
     }
 
@@ -85,8 +84,6 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
             String s = intent.getStringExtra("lala");
             viewModel.selectQuestion(q);
             viewModel.selectMechanic(d);
-            Log.i("beast-mode",d.getFirstName());
-            Log.i("beast-mode",q.question);
         }
     };
 
@@ -110,15 +107,13 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
         intent.setClass(getApplicationContext(), ChooseMechanic.class);
         intent.putExtra(LOGGED_USER,user);
         startActivityForResult(intent,2);
-        Log.i("from_d_to_c","2");
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        // check if request code is same as the passed
+
         if(resultCode == 2){
             {
                 this.selectedMechanic = data.getLongExtra("selectedMechanic", -1);
@@ -127,7 +122,6 @@ public class DisplayAppointmentsActivity extends AppCompatActivity {
                 text.setText("You selected mechanic.");
             }
         } else if(resultCode == 3){
-            Log.i("udjee","mhmhmh");
             this.loggedUserId = data.getIntExtra("user_id",-1);
         }
     }

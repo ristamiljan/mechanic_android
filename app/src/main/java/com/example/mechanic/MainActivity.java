@@ -8,18 +8,15 @@ import androidx.lifecycle.ViewModelProvider;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.mechanic.data.AppViewModel;
-import com.example.mechanic.data.MechanicWithUsers;
 import com.example.mechanic.data.UserAccount;
 import com.example.mechanic.databinding.ActivityMainBinding;
 import com.example.mechanic.ui.DisplayAppointmentsActivity;
 import com.example.mechanic.ui.MechanicLoginFragment;
 import com.example.mechanic.ui.RegisterFragment;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements RegisterFragment.AddUserDialogListener {
 

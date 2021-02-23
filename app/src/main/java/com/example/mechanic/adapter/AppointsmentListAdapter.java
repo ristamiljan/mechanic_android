@@ -99,8 +99,6 @@ public class AppointsmentListAdapter extends RecyclerView.Adapter<AppointsmentLi
             super(view);
             questionItemView = view.findViewById(R.id.question_textView);
             questionItemView.setOnClickListener(v-> {
-                Log.i("clicked adapter at: ",Integer.toString(getAdapterPosition()));
-                Log.i("and clicked at object",mQuestions.get(getAdapterPosition()).question);
                 intent = new Intent("clicked-question");
 
                 intent.putExtra("question", mQuestions.get(getAdapterPosition()));
@@ -115,7 +113,6 @@ public class AppointsmentListAdapter extends RecyclerView.Adapter<AppointsmentLi
 
                 intent.putExtra("userWithMechanic", tmpMechanic);
                 LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
-                Log.i("userWithMechanic", String.valueOf(mUserWithMechanics.mechanics.size()));
             });
         }
     }

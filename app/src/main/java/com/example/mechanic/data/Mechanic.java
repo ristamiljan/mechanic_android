@@ -40,6 +40,7 @@ public class Mechanic implements Serializable {
         this.username = username;
         this.password = pass;
     }
+
     public String getFirstName() {
         return firstName;
     }

@@ -83,7 +83,6 @@ public class MechanicsActivity extends AppCompatActivity {
         int questionMarkPos = q.lastIndexOf('?');
         q = q.substring(0,questionMarkPos);
         viewModel.setAnswer(answer, q);
-        Log.i("problem: ", answer+" "+q);
         ((EditText) findViewById(R.id.answer)).setText("");
     }
 }
